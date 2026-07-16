@@ -144,7 +144,7 @@ def predict_image_with_erp(image_path):
 ---
 
 ## 📈 Model Evaluation & Results
-
+![Model Evaluation](model-evalution.png)
 - Test Accuracy: 55.56% (Baseline CNN model trained for 15 epochs).
 - Primary Observation: The baseline model shows signs of overfitting due to the limited dataset size. Future iterations will focus on mitigation techniques such as Data Augmentation and Transfer Learning.
 
@@ -153,6 +153,7 @@ def predict_image_with_erp(image_path):
 
 ### Test Set Evaluation
 ![Test Evaluation](model-test.png)
+
 - Test Accuracy: 55.56% (Baseline CNN model trained for **15 epochs**).
 - Primary Observation: The baseline model shows signs of overfitting due to the limited dataset size. Future iterations will focus on mitigation techniques such as Data Augmentation and Transfer Learning.
 
