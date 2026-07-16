@@ -54,7 +54,6 @@ dataset/
 - Python
 - TensorFlow
 - Keras
-- Google Colab
 - NumPy
 - Matplotlib
 
