@@ -149,15 +149,15 @@ def predict_image_with_erp(image_path):
 - Primary Observation: The baseline model shows signs of overfitting due to the limited dataset size. Future iterations will focus on mitigation techniques such as Data Augmentation and Transfer Learning.
 
 ### Performance Curves
-![Training Plots](plot_training.png)
+![Training Plots](plot-training.png)
 
 ### Test Set Evaluation
-![Test Evaluation](model_test.png)
+![Test Evaluation](model-test.png)
 - Test Accuracy: 55.56% (Baseline CNN model trained for **15 epochs**).
 - Primary Observation: The baseline model shows signs of overfitting due to the limited dataset size. Future iterations will focus on mitigation techniques such as Data Augmentation and Transfer Learning.
 
 ### Model Architecture & Summary
-![Model Summary](model_summary.png)
+![Model Summary](model-summary.png)
 
 ---
 
