@@ -140,7 +140,7 @@ def predict_image_with_erp(image_path):
 # predict_image_with_erp('dataset/test/Healthy/your_image.jpg')
 
 ### Sample Prediction Output
-![Model Prediction](model_prediction.png)
+![Model Prediction](model-prediction.png)
 ---
 
 ## 📈 Model Evaluation & Results
