@@ -139,12 +139,25 @@ def predict_image_with_erp(image_path):
 # 3. Test on a sample image
 # predict_image_with_erp('dataset/test/Healthy/your_image.jpg')
 
+### Sample Prediction Output
+![Model Prediction](model_prediction.png)
 ---
 
 ## 📈 Model Evaluation & Results
 
+- Test Accuracy: 55.56% (Baseline CNN model trained for 15 epochs).
+- Primary Observation: The baseline model shows signs of overfitting due to the limited dataset size. Future iterations will focus on mitigation techniques such as Data Augmentation and Transfer Learning.
+
+### Performance Curves
+![Training Plots](plot_training.png)
+
+### Test Set Evaluation
+![Test Evaluation](model_test.png)
 - Test Accuracy: 55.56% (Baseline CNN model trained for **15 epochs**).
 - Primary Observation: The baseline model shows signs of overfitting due to the limited dataset size. Future iterations will focus on mitigation techniques such as Data Augmentation and Transfer Learning.
+
+### Model Architecture & Summary
+![Model Summary](model_summary.png)
 
 ---
 
@@ -158,7 +171,7 @@ def predict_image_with_erp(image_path):
 
 ---
 
-## 🇸🇦 Saudi Vision 2030 Alignment
+## Saudi Vision 2030 Alignment
 
 This project supports environmental sustainability and smart technology goals aligned with Saudi Vision 2030, directly contributing to environmental preservation, digital transformation, and the Green Saudi Initiative.
 
