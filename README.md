@@ -49,29 +49,6 @@ dataset/
 
 ---
 
-## Technologies
-
-- Python
-- TensorFlow
-- Keras
-- NumPy
-- Matplotlib
-
----
-
-## Environmental Recovery Potential (ERP)
-
-After classifying an image, the model estimates the recovery potential:
-
-| Environmental Class | ERP |
-|---------------------|-----|
-| Healthy | High |
-| Moderate | Medium |
-| Poor | Low |
-
-This provides additional decision support rather than only predicting a class.
-
----
 
 ## Project Workflow
 
@@ -85,23 +62,109 @@ This provides additional decision support rather than only predicting a class.
 
 ---
 
-## Future Improvements
+## 🛠️ Technologies
 
-- Real-time drone image analysis
-- Satellite imagery integration
-- GIS support
-- Automatic environmental reporting
-- Mobile application deployment
-
----
-
-## Vision Alignment
-
-This project supports environmental sustainability and smart technologies aligned with **Saudi Vision 2030**, contributing to environmental protection and digital transformation.
+- Python
+- TensorFlow / Keras
+- NumPy
+- Matplotlib
 
 ---
 
-## Author
+## 💡 Environmental Recovery Potential (ERP)
 
-**Manar**
+After classifying an image, the model maps the predicted class to an ERP level to support decision-making:
+
+| Environmental Class | ERP Level | Description / Action Priority |
+|----------------------|-----------|-------------------------------|
+| Healthy | 🟢 High | Well-preserved. Low priority for restoration. |
+| Moderate | 🟡 Medium | Showing signs of degradation. Preventive action recommended. |
+| Poor | 🔴 Low | Severely degraded. High priority for urgent restoration. |
+
+---
+
+## 🚀 Installation & Quick Start
+
+### 1. Clone the repository
+git clone https://github.com/your-username/EcoGuardian.git
+cd EcoGuardian
+
+### 2. Install dependencies
+pip install tensorflow numpy matplotlib
+
+### 3. Run the Notebook
+
+Open and execute EcoGuardian.ipynb to train and evaluate the model.
+
+---
+
+## 💻 Prediction & ERP Implementation
+
+Below is the complete prediction code that loads the trained model, predicts the environmental condition of an image, and automatically calculates the Environmental Recovery Potential (ERP):
+import numpy as np
+import tensorflow as tf
+
+# 1. Load the saved model
+loaded_model = tf.keras.models.load_model('EcoGuardian_model.h5')
+
+# 2. Function to predict and estimate ERP
+def predict_image_with_erp(image_path):
+    # Load and preprocess the image
+    img = tf.keras.utils.load_img(image_path, target_size=(224, 224))
+    img_array = tf.keras.utils.img_to_array(img)
+    img_array = tf.expand_dims(img_array, 0)  # Create batch axis
+
+    # Make prediction
+    predictions = loaded_model.predict(img_array)
+    score = tf.nn.softmax(predictions[0])
+
+    # Class names and ERP mapping
+    class_names = ['Healthy', 'Moderate', 'Poor']
+    erp_mapping = {
+        'Healthy': 'High (🟢 Low Restoration Priority - Well Preserved)',
+        'Moderate': 'Medium (🟡 Preventive Action & Monitoring Recommended)',
+        'Poor': 'Low (🔴 High Restoration Priority - Action Required)'
+    }
+
+    predicted_class = class_names[np.argmax(score)]
+    confidence = 100 * np.max(score)
+    erp_status = erp_mapping[predicted_class]
+
+    print("-" * 50)
+    print(f"📷 Image: {image_path}")
+    print(f"🏷️ Predicted Class: {predicted_class} ({confidence:.2f}% confidence)")
+    print(f"🌱 Recovery Potential (ERP): {erp_status}")
+    print("-" * 50)
+
+# 3. Test on a sample image
+# predict_image_with_erp('dataset/test/Healthy/your_image.jpg')
+
+---
+
+## 📈 Model Evaluation & Results
+
+- Test Accuracy: 55.56% (Baseline CNN model trained for **15 epochs**).
+- Primary Observation: The baseline model shows signs of overfitting due to the limited dataset size. Future iterations will focus on mitigation techniques such as Data Augmentation and Transfer Learning.
+
+---
+
+## 🔮 Future Improvements
+
+- 🛸 Real-time drone image analysis.
+- 🛰️ Satellite imagery integration.
+- 🗺️ GIS mapping and localization support.
+- 📊 Automated environmental health reporting.
+- 📱 Mobile application deployment for field researchers.
+
+---
+
+## 🇸🇦 Saudi Vision 2030 Alignment
+
+This project supports environmental sustainability and smart technology goals aligned with Saudi Vision 2030, directly contributing to environmental preservation, digital transformation, and the Green Saudi Initiative.
+
+---
+
+## 👤 Author
+
+Manar  
 Computer Engineering Student
